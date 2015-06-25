@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,9 +44,8 @@ namespace ChallengerSeries.Utils
 
         public static int VayneWStacks(this Obj_AI_Base o)
         {
-            if (o == null) return 0;
-            if (o.Buffs.FirstOrDefault(b => b.Name.Contains("vaynesilver")) == null || !o.Buffs.Any(b => b.Name.Contains("vaynesilver"))) return 0;
-            return o.Buffs.FirstOrDefault(b => b.Name.Contains("vaynesilver")).Count;
+            if (!o.Buffs.Any(b => b.Name.ToLower().Contains("vaynesilver"))) return 0;
+            return o.Buffs.First(b => b.Name.Contains("vaynesilver")).Count;
         }
 
         public static Vector3 Randomize(this Vector3 pos)
@@ -63,8 +62,10 @@ namespace ChallengerSeries.Utils
         public static bool IsShroom(this Vector3 pos)
         {
             return MinionManager.GetMinions(pos, 150)
-                .Any(m => m.CharData.Name.Contains("mine") || m.CharData.Name.Contains("trap") ||
-                        m.CharData.Name.Contains("shroom") || m.CharData.Name.Contains("cait")) && !HeroManager.Enemies.Any(h => h.IsMelee() && h.Distance(pos) < 200);
+                .Any(
+                    m =>
+                        m.BaseSkinName.Contains("mine") || m.BaseSkinName.Contains("trap") ||
+                        m.BaseSkinName.Contains("shroom") || m.BaseSkinName.Contains("cait")) && !HeroManager.Enemies.Any(h => h.IsMelee() && h.Distance(pos) < 150);
         }
 
         public static IEnumerable<Vector3> GetCondemnPositions(Vector3 position)
