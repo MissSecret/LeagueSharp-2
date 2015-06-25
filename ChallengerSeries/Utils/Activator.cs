@@ -1,4 +1,30 @@
-﻿using System;
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+    @MissSecret
+
+You don't have any verified emails. We recommend verifying at least one email.
+
+Email verification helps our support team verify ownership if you lose account access and allows you to receive all the notifications you ask for.
+
+1
+0
+
+    2
+
+myo/LeagueSharp
+
+LeagueSharp/ChallengerSeries/Utils/Activator.cs
+spudgy 16 hours ago xqxq
+
+0 contributors
+764 lines (672 sloc) 29.478 kB
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -761,3 +787,8 @@ namespace ChallengerSeries.Utils
     }
 #endregion
 }
+
+    Status API Training Shop Blog About Help 
+
+    © 2015 GitHub, Inc. Terms Privacy Security Contact 
+
